@@ -2,6 +2,26 @@
 layout: page
 css: ["index.css"]
 ---
+
+<form action="index.html" method="get">
+			<input type="text" name="username" id=""  placeholder="请输入用户名"/>
+			<button type="submit">登录</button>
+		</form>
+
+  <script type="text/javascript">
+			window.addEventListener('load',function(){
+				//获取元素
+				var div=document.querySelector('div');
+				//获取元素
+				console.log(location.search);
+				var str=location.search.substr(1);
+				console.log(str);
+				var arr = str.split('=');
+				div.innerHTML=arr[1]+'欢迎登录';	
+			})
+		</script>
+
+
 <div class="row">
     {% for post in paginator.posts %}
     <div class="col s12">
